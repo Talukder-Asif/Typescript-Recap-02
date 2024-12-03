@@ -7,7 +7,9 @@
     }
 
     // Use "KyeOf" to get keys of the book type
-    // type BookKeys = keyof Book;
+    type BookKeys = keyof Book;
+
+    const anotherBook: BookKeys = "author";
 
     function getBookProperty<T, K extends keyof T>(book: T, key: K): T[K]{
         return book[key];
@@ -20,7 +22,8 @@
     }
 
 
-    console.log(getBookProperty(myBook, "author"));
+    console.log(getBookProperty(myBook, "title"));
+    console.log(anotherBook);
 
 
 }
