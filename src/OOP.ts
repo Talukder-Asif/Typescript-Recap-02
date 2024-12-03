@@ -27,20 +27,49 @@
     }
   }
 
-  class Piano extends MusicalInstuments{
+  class Piano extends MusicalInstuments {
     constructor() {
       super("Piano");
     }
 
-    openLid(){
-        console.log(`Opening the lid..... ${this.name}`);
+    openLid() {
+      console.log(`Opening the lid..... ${this.name}`);
     }
   }
   const guitarist = new Guitar();
-  console.log(guitarist.name)
+  console.log(guitarist.name);
   guitarist.play();
 
-//   Abstraction
 
+
+  //   Abstraction
+  class CoffeeMechine {
+    private isPower: boolean = false;
+
+    powerOn() {
+      this.isPower = true;
+      console.log("Powering on the coffee machine");
+    }
+
+    makeCoffee() {
+      if (this.isPower) {
+        console.log("Making coffee");
+      } else {
+        console.log("Power is off, can't make coffee");
+      }
+    }
+
+    powerOff() {
+      this.isPower = false;
+      console.log("Powering off the coffee machine");
+    }    
+  }
+
+  const myCoffee = new CoffeeMechine();
+//   ei khane ei kaj gula kmne holo amra jani na, eita ke abstraction bole, Banglay abstraction mane dheke rakha
+  myCoffee.makeCoffee();
+  myCoffee.powerOn();
+  myCoffee.makeCoffee();
+  myCoffee.powerOff();
 
 }
